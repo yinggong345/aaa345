@@ -1,26 +1,47 @@
- {
-      "name": "Debug SFT Training",
-      "type": "python",
-      "request": "launch",
-      "cwd": "${workspaceFolder}/model/model_training",
-      "program": "trainer_sft.py",
-      "args": ["--configs", "defaults", "oasst_export_eu", "gpt-neox"],
-      "console": "integratedTerminal",
-      "justMyCode": true,
-      "env": {
-        "TOKENIZERS_PARALLELISM": "false"
-      }
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "checkJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "noUncheckedIndexedAccess": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
     },
-    {
-      "name": "Debug RM Training",
-      "type": "python",
-      "request": "launch",
-      "cwd": "${workspaceFolder}/model/model_training",
-      "program": "trainer_rm.py",
-      "args": ["--configs", "defaults_rm", "oasst_export_eu", "debug"],
-      "console": "integratedTerminal",
-      "justMyCode": true,
-      "env": {
-        "TOKENIZERS_PARALLELISM": "false",
-        "CUDA_VISIBLE_DEVICES": "1,2,3,4,5,6,7"
+    "plugins": [
+      {
+        "name": "next"
       }
+    ]
+  },
+  "include": [
+    ".eslintrc.cjs",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.cjs",
+    "**/*.mjs",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
